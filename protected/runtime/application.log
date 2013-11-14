@@ -375,3 +375,48 @@ REQUEST_URI=/saar/index.php?r=site/index
 in /home/lalviarez/Proyectos/SAAR/protected/views/layouts/main.php (42)
 in /home/lalviarez/Proyectos/SAAR/protected/views/layouts/column1.php (6)
 in /home/lalviarez/Proyectos/SAAR/protected/controllers/SiteController.php (32)
+2013/11/13 23:47:13 [error] [php] Use of undefined constant php - assumed 'php' (/home/capsulanet/Proyectos/Leonardo/SAAR/themes/rhea/views/layouts/main.php:89)
+Stack trace:
+#0 /usr/share/yii-framework/framework/web/widgets/CContentDecorator.php(76): ChoferController->renderFile()
+#1 /usr/share/yii-framework/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#2 /usr/share/yii-framework/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#3 /usr/share/yii-framework/framework/web/CBaseController.php(206): CContentDecorator->run()
+#4 /usr/share/yii-framework/framework/web/CBaseController.php(300): ChoferController->endWidget()
+#5 /home/capsulanet/Proyectos/Leonardo/SAAR/themes/rhea/views/layouts/column2.php(24): ChoferController->endContent()
+#6 /usr/share/yii-framework/framework/web/CBaseController.php(126): require()
+#7 /usr/share/yii-framework/framework/web/CBaseController.php(95): ChoferController->renderInternal()
+#8 /usr/share/yii-framework/framework/web/CController.php(784): ChoferController->renderFile()
+#9 /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/ChoferController.php(79): ChoferController->render()
+#10 /usr/share/yii-framework/framework/web/actions/CInlineAction.php(49): ChoferController->actionCreate()
+#11 /usr/share/yii-framework/framework/web/CController.php(308): CInlineAction->runWithParams()
+#12 /usr/share/yii-framework/framework/web/filters/CFilterChain.php(133): ChoferController->runAction()
+#13 /usr/share/yii-framework/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#14 /usr/share/yii-framework/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#15 /usr/share/yii-framework/framework/web/filters/CInlineFilter.php(58): ChoferController->filterAccessControl()
+#16 /usr/share/yii-framework/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#17 /usr/share/yii-framework/framework/web/CController.php(291): CFilterChain->run()
+#18 /usr/share/yii-framework/framework/web/CController.php(265): ChoferController->runActionWithFilters()
+#19 /usr/share/yii-framework/framework/web/CWebApplication.php(282): ChoferController->run()
+#20 /usr/share/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#21 /usr/share/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#22 /home/capsulanet/Proyectos/Leonardo/SAAR/index.php(13): CWebApplication->run()
+REQUEST_URI=/saar/index.php?r=chofer/create
+in /home/capsulanet/Proyectos/Leonardo/SAAR/themes/rhea/views/layouts/main.php (89)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/themes/rhea/views/layouts/column2.php (24)
+in /home/capsulanet/Proyectos/Leonardo/SAAR/protected/controllers/ChoferController.php (79)
+2013/11/14 00:15:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "tipochofer/admin"' in /usr/share/yii-framework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /usr/share/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('tipochofer/admi...')
+#1 /usr/share/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /home/capsulanet/Proyectos/Leonardo/SAAR/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/saar/index.php?r=tipochofer/admin
+---
+2013/11/14 00:15:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "tipochofer"' in /usr/share/yii-framework/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /usr/share/yii-framework/framework/web/CWebApplication.php(141): CWebApplication->runController('tipochofer')
+#1 /usr/share/yii-framework/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /home/capsulanet/Proyectos/Leonardo/SAAR/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/saar/index.php?r=tipochofer
+---

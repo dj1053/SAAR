@@ -23,56 +23,77 @@
 
 <div class="container" id="page">
 
-	<p>
+	<p style="margin:0px;">
   <!-- <div id="header">
 		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?>
 		</div>
 	</div><!-- header -->
   <img src="images/banner_saar.jpg" width="950" height="200" /></p>
-	<br />
+
 	<div>
 		<?php /*$this->widget('zii.widgets.CMenu',array(*/
 			$this->widget('bootstrap.widgets.TbNavbar', array(
 			'brand'=>'SAAR',
 			'brandUrl'=>'#',
+			'type'=>'', // null or 'inverse'
 			'collapse'=>true, // requires bootstrap-responsive.css
 			'fixed'=>'',
 			'items'=>array(
 				array(
 					'class'=>'bootstrap.widgets.TbMenu',
 					'items'=>array(
-						array('label'=>'Home', 'url'=>array('/site/index')),
-						array('label'=>'Choferes', 'url'=>array('/chofer/index'), 'items'=>array(
+						array('label'=>'Gestionar Solicitudes', 'url'=>array('/chofer/index'), 'visible'=>!Yii::app()->user->isGuest,'items'=>array(
 							array('label'=>'Registrar', 'url'=>array('/chofer/create')),
 							array('label'=>'Modificar', 'url'=>array('#')),
 							array('label'=>'Consultar', 'url'=>array('#')),
 							array('label'=>'Eliminar', 'url'=>array('#')),
 						)),
-						array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-						array('label'=>'Contact', 'url'=>array('/site/contact')),
-						array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-						array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
-						array('label'=>'Dropdown', 'url'=>'#', 'items'=>array(
-							array('label'=>'Action', 'url'=>'#'),
-							array('label'=>'Another action', 'url'=>'#'),
-							array('label'=>'Something else here', 'url'=>'#'),
-							'---',
-							array('label'=>'NAV HEADER'),
-							array('label'=>'Separated link', 'url'=>'#'),
-							array('label'=>'One more separated link', 'url'=>'#'),
+						
+						
+						
+						array('label'=>'Gestionar Asignaciones', 'url'=>array('/chofer/index'), 'visible'=>!Yii::app()->user->isGuest,'items'=>array(
+							array('label'=>'Registrar', 'url'=>array('/vehiculo/create')),
+							array('label'=>'Modificar', 'url'=>array('#')),
+							array('label'=>'Consultar', 'url'=>array('#')),
+							array('label'=>'Eliminar', 'url'=>array('#')),
 						)),
+						array('label'=>'Definiciones', 'url'=>array('#'), 'visible'=>!Yii::app()->user->isGuest,'items'=>array(
+							array('label'=>'Gestionar Choferes', 'url'=>array('/chofer/index'), 'visible'=>!Yii::app()->user->isGuest,'items'=>array(
+								array('label'=>'Registrar', 'url'=>array('/chofer/create')),
+								array('label'=>'Modificar', 'url'=>array('/chofer/admin')),
+								array('label'=>'Consultar', 'url'=>array('/chofer/admin')),
+								array('label'=>'Eliminar', 'url'=>array('/chofer/admin')),
+							)),
+							array('label'=>'Gestionar Vehículos', 'url'=>array('/chofer/index'), 'visible'=>!Yii::app()->user->isGuest,'items'=>array(
+								array('label'=>'Registrar', 'url'=>array('/vehiculo/create')),
+								array('label'=>'Modificar', 'url'=>array('#')),
+								array('label'=>'Consultar', 'url'=>array('#')),
+								array('label'=>'Eliminar', 'url'=>array('#')),
+							)),
+							array('label'=>'Gestionar Destinos', 'url'=>array('/chofer/index'), 'visible'=>!Yii::app()->user->isGuest,'items'=>array(
+								array('label'=>'Registrar', 'url'=>array('/vehiculo/create')),
+								array('label'=>'Modificar', 'url'=>array('#')),
+								array('label'=>'Consultar', 'url'=>array('#')),
+								array('label'=>'Eliminar', 'url'=>array('#')),
+							)),
+						)),
+						array('label'=>'Reportes', 'url'=>array('#'), 'visible'=>!Yii::app()->user->isGuest),
+						array('label'=>'Seguridad', 'url'=>array('#'), 'visible'=>!Yii::app()->user->isGuest),
+						array('label'=>'Ayuda', 'url'=>array('/site/page', 'view'=>'about')),
+						array('label'=>'Ingresar', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+						array('label'=>'Salir ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),			
 					),
 				),
 			),
 		)); ?>
 	<?php if(isset($this->breadcrumbs)):?>
-		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
+		<?php /*$this->widget('zii.widgets.CBreadcrumbs', array(
 			'links'=>$this->breadcrumbs,
 			'homeLink'=>''
-		)); ?><!-- breadcrumbs -->
+		)); */?><!-- breadcrumbs -->
 	<?php endif?>
 
-	<div id="main-content">
+	<div id="main-content" style="box-shadow: none; border: 0px; background: none; margin: 0px;">
 		<?php echo $content; ?>
 	</div>
 	<div id="footer">
