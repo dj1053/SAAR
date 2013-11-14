@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create Chofer</h1>
+<h1>Registrar Chofer</h1>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -30,10 +30,10 @@
 										array('empty' => 'Seleccione...')); ?>
 
 	<div class="form-actions">
-	<?php $submit = $model->isNewRecord ? 'Registrar' : 'Guardar'; ?>
-    <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>$submit)); ?>
-    <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'reset', 'label'=>'Limpiar')); ?>
-</div>
+		<?php $submit = $model->isNewRecord ? 'Registrar' : 'Guardar'; ?>
+		<?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>$submit)); ?>
+		<?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'reset', 'label'=>'Limpiar')); ?>
+	</div>
 
 <?php $this->endWidget(); ?>
 

@@ -6,48 +6,31 @@
 
 <div class="form">
 
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'solicitud-form',
-	// Please note: When you enable ajax validation, make sure the corresponding
-	// controller action is handling ajax validation correctly.
-	// There is a call to performAjaxValidation() commented in generated controller code.
-	// See class documentation of CActiveForm for details on this.
-	'enableAjaxValidation'=>false,
-)); ?>
+<?php 
+	$form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
+    'id'=>'solicitud-form',
+    'htmlOptions'=>array('class'=>'well'),
+	));
+?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Los campos con <span class="required">*</span> son requeridos.</p>
 
 	<?php echo $form->errorSummary($model); ?>
+	
+	<?php echo $form->textFieldRow($model,'solicitante',array('size'=>60,'maxlength'=>256)); ?>
+	
+	<?php echo $form->textFieldRow($model, 'fecha_salida', array('class'=>'input-small', 'prepend'=>'<i class="icon-calendar"></i>')); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'fecha_salida'); ?>
-		<?php echo $form->textField($model,'fecha_salida'); ?>
-		<?php echo $form->error($model,'fecha_salida'); ?>
-	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'fecha_llegada'); ?>
-		<?php echo $form->textField($model,'fecha_llegada'); ?>
-		<?php echo $form->error($model,'fecha_llegada'); ?>
-	</div>
+	<?php echo $form->textFieldRow($model, 'fecha_llegada', array('class'=>'input-small', 'prepend'=>'<i class="icon-calendar"></i>')); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'hora_salida'); ?>
-		<?php echo $form->textField($model,'hora_salida'); ?>
-		<?php echo $form->error($model,'hora_salida'); ?>
-	</div>
+	<?php echo $form->textFieldRow($model, 'hora_salida', array('class'=>'input-small', 'prepend'=>'<i class="icon-time"></i>')); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'hora_llegada'); ?>
-		<?php echo $form->textField($model,'hora_llegada'); ?>
-		<?php echo $form->error($model,'hora_llegada'); ?>
-	</div>
+	<?php echo $form->textFieldRow($model, 'hora_llegada', array('class'=>'input-small', 'prepend'=>'<i class="icon-time"></i>')); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'lugar_encuentro'); ?>
-		<?php echo $form->textArea($model,'lugar_encuentro',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'lugar_encuentro'); ?>
-	</div>
+	
+	<?php echo $form->textAreaRow($model,'lugar_encuentro',array('rows'=>3, 'cols'=>50)); ?>
+	
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'id_destino'); ?>
@@ -60,15 +43,11 @@
 		<?php echo $form->textField($model,'id_estatus_solicitud'); ?>
 		<?php echo $form->error($model,'id_estatus_solicitud'); ?>
 	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'solicitante'); ?>
-		<?php echo $form->textField($model,'solicitante',array('size'=>60,'maxlength'=>256)); ?>
-		<?php echo $form->error($model,'solicitante'); ?>
-	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+	
+	<div class="form-actions">
+		<?php $submit = $model->isNewRecord ? 'Registrar' : 'Guardar'; ?>
+		<?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'type'=>'primary', 'label'=>$submit)); ?>
+		<?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'reset', 'label'=>'Limpiar')); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

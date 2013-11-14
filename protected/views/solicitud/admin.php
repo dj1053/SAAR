@@ -26,38 +26,49 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Solicituds</h1>
+<h1>Consultar Solicitudes</h1>
 
+<!--
 <p>
 You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
 or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
+</p> -->
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
+<?php echo CHtml::link('Buscar','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
 )); ?>
 </div><!-- search-form -->
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
+<?php $this->widget('bootstrap.widgets.TbGridView', array(
 	'id'=>'solicitud-grid',
 	'dataProvider'=>$model->search(),
-	'filter'=>$model,
+	/*'filter'=>$model,*/
+	'template'=>"{items}",
+	'type'=>'striped bordered condensed',
 	'columns'=>array(
-		'id',
+        array('name'=>'solicitante', 'header'=>'Solicitante'),
+        array('name'=>'id_destino', 'header'=>'Destino'),
+        array('name'=>'fecha_salida', 'header'=>'Fecha de Salida'),
+        array('name'=>'fecha_llegada', 'header'=>'Fecha de Llegada'),
+		/*'id',
 		'fecha_salida',
 		'fecha_llegada',
 		'hora_salida',
 		'hora_llegada',
-		'lugar_encuentro',
+		'lugar_encuentro',*/
 		/*
 		'id_destino',
 		'id_estatus_solicitud',
 		'solicitante',
 		*/
-		array(
+		/*array(
 			'class'=>'CButtonColumn',
-		),
+		),*/
+		array(
+            'class'=>'bootstrap.widgets.TbButtonColumn',
+            'htmlOptions'=>array('style'=>'width: 50px'),
+        ),
 	),
 )); ?>
