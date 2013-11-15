@@ -52,7 +52,7 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 		'cedula',
 		'id_tipo_chofer',
 		/*array(  
-			'header'=>'Nombre Orden', 
+			'header'=>'Tipo de Chofer', 
 			'value'=>'$data->idTipoChofer->tipo' 
 		),*/
 		'id_estatus_chofer',

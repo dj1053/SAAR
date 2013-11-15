@@ -34,7 +34,7 @@
 		<?php /*$this->widget('zii.widgets.CMenu',array(*/
 			$this->widget('bootstrap.widgets.TbNavbar', array(
 			'brand'=>'SAAR',
-			'brandUrl'=>'#',
+			'brandUrl'=>'',
 			'type'=>'', // null or 'inverse'
 			'collapse'=>true, // requires bootstrap-responsive.css
 			'fixed'=>'',
@@ -44,33 +44,33 @@
 					'items'=>array(
 						array('label'=>'Gestionar Solicitudes', 'url'=>array('#'),'visible'=>!Yii::app()->user->isGuest,'items'=>array(
 							array('label'=>'Registrar', 'url'=>array('solicitud/create')),
-							array('label'=>'Consultar', 'url'=>array('solicitud/admin')),
+							array('label'=>'Buscar', 'url'=>array('solicitud/admin')),
 						)),						
 						array('label'=>'Gestionar Asignaciones', 'url'=>array('/chofer/index'), 'visible'=>!Yii::app()->user->isGuest,'items'=>array(
 							array('label'=>'Registrar', 'url'=>array('/RutaAsignada/create')),
-							array('label'=>'Consultar', 'url'=>array('/RutaAsignada/admin')),
+							array('label'=>'Buscar', 'url'=>array('/RutaAsignada/admin')),
 						)),
 						array('label'=>'Definiciones', 'url'=>array('#'), 'visible'=>!Yii::app()->user->isGuest,'items'=>array(
 							array('label'=>'Gestionar Choferes', 'url'=>array('/chofer/index'), 'visible'=>!Yii::app()->user->isGuest,'items'=>array(
 								array('label'=>'Registrar', 'url'=>array('/chofer/create')),
-								array('label'=>'Consultar', 'url'=>array('/chofer/admin')),
+								array('label'=>'Buscar', 'url'=>array('/chofer/admin')),
 							)),
 							array('label'=>'Gestionar Vehículos', 'url'=>array('/chofer/index'), 'visible'=>!Yii::app()->user->isGuest,'items'=>array(
 								array('label'=>'Registrar', 'url'=>array('/vehiculo/create')),
-								array('label'=>'Consultar', 'url'=>array('/vehiculo/admin')),
+								array('label'=>'Buscar', 'url'=>array('/vehiculo/admin')),
 							)),
 							array('label'=>'Gestionar Destinos', 'url'=>array('/chofer/index'), 'visible'=>!Yii::app()->user->isGuest,'items'=>array(
 								array('label'=>'Registrar', 'url'=>array('/destino/create')),
-								array('label'=>'Consultar', 'url'=>array('/destino/admin')),
+								array('label'=>'Buscar', 'url'=>array('/destino/admin')),
 							)),
 							/*"---",
 							array('label'=>'Gestionar Tipo de Choferes', 'url'=>array('/chofer/index'), 'visible'=>!Yii::app()->user->isGuest,'items'=>array(
 								array('label'=>'Registrar', 'url'=>array('/destino/create')),
-								array('label'=>'Consultar', 'url'=>array('/destino/admin')),
+								array('label'=>'Buscar', 'url'=>array('/destino/admin')),
 							)),
 							array('label'=>'Gestionar Estatus de Choferes', 'url'=>array('/chofer/index'), 'visible'=>!Yii::app()->user->isGuest,'items'=>array(
 								array('label'=>'Registrar', 'url'=>array('/destino/create')),
-								array('label'=>'Consultar', 'url'=>array('/destino/admin')),
+								array('label'=>'Buscar', 'url'=>array('/destino/admin')),
 							)),*/
 						)),
 						array('label'=>'Reportes', 'url'=>array('#'), 'visible'=>!Yii::app()->user->isGuest,'items'=>array(
@@ -82,7 +82,7 @@
 						array('label'=>'','icon'=>'icon-cog','url'=>array('#'), 'linkOptions' => array('title'=>'Ajustes de Seguridad', 'rel'=>'tooltip'), 'visible'=>!Yii::app()->user->isGuest,'items'=>array(
 							array('label'=>'Gestionar usuarios', 'url'=>array(''),'items'=>array(
 								array('label'=>'Registrar', 'url'=>array('')),
-								array('label'=>'Consultar', 'url'=>array('')),
+								array('label'=>'Buscar', 'url'=>array('')),
 							)),
 							array('label'=>'Respaldos', 'url'=>array('')),
 						)),
@@ -107,8 +107,8 @@
 		<?php echo $content; ?>
 	</div>
 	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
-		All Rights Reserved.<br/>
+		Copyright &copy; <?php echo date('Y'); ?> SAAR<br/>
+		Software Libre (GPL3)<br/>
 		<?php echo Yii::powered(); ?>
 	</div><!-- footer -->
 
