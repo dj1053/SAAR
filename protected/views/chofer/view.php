@@ -17,7 +17,7 @@ $this->menu=array(
 ?>
 
 <h1>Chofer <?php echo $model->nombre; ?></h1>
-
+<h3>Esto es una prueba</h3>
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
